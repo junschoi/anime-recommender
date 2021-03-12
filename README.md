@@ -15,7 +15,7 @@
 
 # Problem Statement
 
-MyAnimeList, often abbreviated as MAL, is an anime and manga social networking and social cataloging application website run by volunteers. Although the website has a great amount of anime data, it lacks a data driven recommender system. The current recommendation section is just a list of user recommendation submissions (e.g. "If you like anime 'X', you will like anime 'Y'"), which are often very subjective and limited in the number of recommendations per anime title. So I decided to create a recommender system using the users' list of anime scores (collaborative filtering) and anime metadata (content-based recommender using NLP on genres and synopsis description). The goal is to provide better recommendations to MyAnimeList users via flask app.
+[MyAnimeList](https://myanimelist.net/), often abbreviated as MAL, is an anime and manga social networking and social cataloging application website run by volunteers.<sup>[1]</sup> Although the website has a great amount of anime data, it lacks a data driven recommender system. The current recommendation section is just a list of user recommendation submissions (e.g. "If you like anime 'X', you will like anime 'Y'"), which are often very subjective and limited in the number of recommendations per anime title. So I decided to create a recommender system using the users' list of anime scores (collaborative filtering) and anime metadata (content-based recommender using NLP on genres and synopsis description). The goal is to provide better recommendations to MyAnimeList users via flask app.
 
 # Executive Summary
 
@@ -54,7 +54,7 @@ NOTE: `data` directory is not included in this repository because some data file
 
 # Data Collection
 
-I used a library called `jikanpy` which is a Python wrapper for Jikan API, an open-source PHP & REST API for MyAnimeList.<sup>[1]</sup> Due to request limits in Jikan API, scraping scripts have 2-4 second delays between requests.
+I used a library called `jikanpy` which is a Python wrapper for [Jikan API](https://jikan.docs.apiary.io/#), an open-source PHP & REST API for MyAnimeList. Due to request limits in Jikan API, scraping scripts have 2-4 second delays between requests.
 
 First, I created a script called `01_scrape_anime.py` which scrapes anime metadata from top 10,000 animes (by average review score). This script saves a json file called `top_anime.json` in the data directory, and this file is used for creating the content-based recommender. This script may run for several hours.
 
