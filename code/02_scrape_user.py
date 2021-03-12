@@ -3,7 +3,6 @@ import time
 import random
 import json
 import math
-import datetime
 
 """
 Add MyAnimeList club ids to club_list variable.
@@ -78,8 +77,7 @@ def get_user_scores(members_lst):
         except:
             pass
     
-    now = datetime.datetime.now().strftime('%m%d%Y')
-    with open(f'../data/user_lst_{now}.json', 'w') as anime_file:
+    with open(f'../data/user_lst.json', 'w') as anime_file:
         json.dump(scores_lst, anime_file)
 
 if __name__ == '__main__':

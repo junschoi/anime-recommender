@@ -4,16 +4,16 @@ import ijson
 
 """
 Run this script after running scrape_user.py which creates a json containing users' anime lists. 
-Make sure the filepath variable directs to the correct user_lst_date.json file in the data directory.
+Make sure the filepath variable directs to the correct user_lst.json file in the data directory.
 
-Note: ijson library is used for extracting information from user_lst_date.json file because the file may be very large.
+Note: ijson library is used for extracting information from user_lst.json file because the file may be very large.
 """
 
-filepath = "../data/user_lst_03092021.json"
+filepath = "../data/user_lst.json"
 
 def extract_user_lst(filepath):
     """
-    Reads user_lst_date.json created from `scrape_user.py` script, extracts animelist information,
+    Reads user_lst.json created from `scrape_user.py` script, extracts animelist information,
     and stores the extracted information as `user_cleaned.csv` file in the data directory. 
 
     Args:
