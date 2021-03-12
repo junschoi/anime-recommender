@@ -27,6 +27,7 @@ NOTE: `data` directory is not included in this repository because some data file
 
 ```
 📜README.html
+📜requirements.txt
 📦app
 ┣ 📂templates
 ┃ ┣ 📜page.html
