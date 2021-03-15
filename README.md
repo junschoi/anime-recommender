@@ -32,6 +32,7 @@ Source for [`background.jpeg`](https://i.imgur.com/HKHi8sW.jpeg)
 📜README.html
 📜requirements.txt
 📜.gitignore
+📜presentation.pdf
 📦app
 ┣ 📂static
 ┃ ┣ 📂styles
