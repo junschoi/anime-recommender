@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles/index.css') }}"
+    />
+    <title>Anime Recommender</title>
+  </head>
+  <body>
+    <h1>Anime Recommender</h1>
+    <p>Enter the exact anime title as shown in MyAnimeList.</p>
+    <form action="http://localhost:4000/results" method="POST">
+      <div class="searchcontainer">
+        <p>Anime Title <input type="str" name="anime" /></p>
+        <p><input type="submit" value="Recommend" /></p>
+      </div>
+      <div class="slidecontainer">
+        <input
+          id="rec_slider"
+          name="slider"
+          type="range"
+          min="0"
+          max="1"
+          value="0.5"
+          step="0.1"
+          class="slider"
+        />
+        <br />
+        <div class="same-line">
+          <div class="slider-label-left">Content-Based</div>
+          <div class="slider-label-right">Collaborative</div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

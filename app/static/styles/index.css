@@ -1,0 +1,39 @@
+body {
+  font-family: Verdana;
+  font-size: large;
+  color: white;
+  background-image: url("../background.jpeg");
+  background-size: cover;
+}
+
+.searchcontainer p {
+  display: inline-block;
+  vertical-align: top;
+}
+.slidecontainer {
+  width: 350px;
+}
+
+.slider {
+  width: 100%;
+}
+
+.same-line {
+  height: 10px;
+  position: relative;
+}
+
+.same-line div {
+  display: inline-block;
+  position: absolute;
+}
+
+.slider-label-left {
+  font-size: small;
+  left: 0px;
+}
+
+.slider-label-right {
+  font-size: small;
+  right: 0px;
+}

@@ -1,9 +1,46 @@
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>Anime Recommendations</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='styles/results.css') }}"
+    />
   </head>
 
   <body>
-    {{ message }} {{ ret }}
+    <!-- {{ message }} {% for table in tables %} {{ table|safe }} {% endfor %} -->
+
+    <h1>{{ message }}</h1>
+
+    <table>
+      <tr>
+        {% for col in column_names %}
+        <th>{{col}}</th>
+        {% endfor %}
+      </tr>
+      {% for row in row_data %}
+      <tr>
+        {% for col, row_ in zip(column_names, row) %} {% if col == image_column%}
+        <td>
+          <a href= {{ row_ }} class="anime-image">
+            <img src= {{ row_ }} class="anime-image" />
+          </a>
+        </td>
+        {% elif col == trailer_column and row_ != None%}
+        <td>
+          <a href={{ row_ }}>TRAILER</a>
+        </td>
+        {% elif col == url_column and row_ != None%}
+        <td>
+          <a href={{ row_ }}>LINK</a>
+        </td>
+        {% else %}
+        <td>{{ row_ }}</td>
+        {% endif %} {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
   </body>
 </html>

@@ -1,0 +1,21 @@
+body {
+    font-family: Verdana;
+    font-size: large;
+    color: white;
+    background-image: url("../background.jpeg");
+    background-size: auto;
+  }
+
+table {
+    font-family: Verdana;
+    border-collapse: collapse;
+    background-color: #cc99a2;
+    opacity: 0.95;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
