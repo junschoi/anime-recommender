@@ -90,12 +90,12 @@ def recommend():
         collab_level = float(inputs['slider'])
 
         try:
-            message = 'Top 20 Recommendations'
+            message = 'Top Recommendations'
             weighted_df = pd.merge(left=cosine_sim_content[anime], right=cosine_sim_collab[anime], on='title')
             weighted_df['weighted_sim'] = weighted_df.iloc[:, 0] * (1-collab_level) + weighted_df.iloc[:, 1] * collab_level
             final_df = pd.merge(left=df, right=weighted_df['weighted_sim'], left_on='title', right_on=weighted_df['weighted_sim'].index)
 
-            ret = final_df.sort_values(by='weighted_sim', ascending=False)[['image_url', 'url', 'title', 'score', 'rating', 'status', 'premiered', 'trailer_url', 'weighted_sim']][1:21]
+            ret = final_df.sort_values(by='weighted_sim', ascending=False)[['image_url', 'url', 'title', 'score', 'rating', 'status', 'premiered', 'trailer_url', 'weighted_sim']][1:51]
             ret['weighted_sim'] = np.round(ret['weighted_sim'], 4)
             ret.columns = ['Image', 'URL', 'Title', 'Score', 'Rating', 'Status', 'Premiered', 'Trailer', 'Weighted Similarity']
         except:

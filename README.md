@@ -52,7 +52,7 @@ Source for [`background.jpeg`](https://i.imgur.com/HKHi8sW.jpeg)
 ┣ 📜01_scrape_anime.py
 ┣ 📜02_scrape_user.py
 ┣ 📜03_extract_user_lst.py
-┣ 📜notebook.ipynb
+┣ 📜04_modeling_&_eda.ipynb
 📦data
 ┣ 📜top_anime.json
 ┣ 📜user_cleaned.csv
@@ -97,6 +97,12 @@ Finally, I created a script called `03_extract_user_lst.py` which extracts core 
 
 ![anime_score_distribution](./assets/anime_score_distribution.png)
 
+![number_of_episodes](./assets/episodes.png)
+
+![seasons](./assets/seasons.png)
+
+![avg_anime_score](./assets/avg_anime_score.png)
+
 # Modeling
 
 The final recommender is a combination of two recommenders: content-based recommender and collaborative recommender. Both recommenders are based on cosine similarity equation. Cosine similarity is a measure of similarity between the two non-zero vectors of an inner produce space <sup>[2]</sup>.
@@ -105,7 +111,7 @@ The final recommender is a combination of two recommenders: content-based recomm
 
 **Content-based recommender**: Natural Language Processing (NLP) is used to create vectorized matrix on animes' genres and synopsis descriptions. TF-IDF vectorized matrix of synopsis descriptions and dummified matrix of genre titles are concatenated together, and cosine similarity is calculated with the concatenated matrix. The content-based recommender takes in the name of the anime and returns a list of recommended animes based on the similarity scores. 
 
-**Collaborative recommender**: A pivot table of scores with anime title indices and username columns are created, and cosine similarity is calcualted with this pivot table. The collaborative recommender  laso takes in the name of the anime and returns a list of recommended animes based on the similarity scores. 
+**Collaborative recommender**: A pivot table of scores with anime title indices and username columns are created, and cosine similarity is calcualted with this pivot table. The collaborative recommender also takes in the name of the anime and returns a list of recommended animes based on the similarity scores. 
 
 **Hybrid recommender**: Cosine similarity scores of each anime from content-based recommender and collaborative recommender are applied with user-specified weight and returns a list of recommended animes based on the sum of these weighted similarity scores.  
 
